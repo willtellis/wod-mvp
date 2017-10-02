@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7856A0211F82E2D7002D7CBC /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856A0201F82E2D7002D7CBC /* ReSwift.framework */; };
 		78E52CB51F746A93003BD244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB41F746A93003BD244 /* AppDelegate.swift */; };
 		78E52CB71F746A93003BD244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB61F746A93003BD244 /* ViewController.swift */; };
 		78E52CBA1F746A93003BD244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E52CB81F746A93003BD244 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7856A0201F82E2D7002D7CBC /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		78E52CB11F746A93003BD244 /* WODmvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WODmvp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E52CB41F746A93003BD244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78E52CB61F746A93003BD244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7856A0211F82E2D7002D7CBC /* ReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7856A01F1F82E2D7002D7CBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7856A0201F82E2D7002D7CBC /* ReSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78E52CA81F746A93003BD244 = {
 			isa = PBXGroup;
 			children = (
 				78E52CB31F746A93003BD244 /* WODmvp */,
 				78E52CC81F746A93003BD244 /* WODmvpTests */,
 				78E52CB21F746A93003BD244 /* Products */,
+				7856A01F1F82E2D7002D7CBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +118,7 @@
 				78E52CAD1F746A93003BD244 /* Sources */,
 				78E52CAE1F746A93003BD244 /* Frameworks */,
 				78E52CAF1F746A93003BD244 /* Resources */,
+				7856A0221F82E30C002D7CBC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,6 +206,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7856A0221F82E30C002D7CBC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78E52CAD1F746A93003BD244 /* Sources */ = {
@@ -355,6 +386,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7385526RHE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WODmvp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willellisinc.WODmvp;
@@ -370,6 +405,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7385526RHE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WODmvp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willellisinc.WODmvp;
