@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7856A0211F82E2D7002D7CBC /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856A0201F82E2D7002D7CBC /* ReSwift.framework */; };
+		788071841F868213001228C4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071831F868213001228C4 /* AppState.swift */; };
+		788071871F868726001228C4 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071861F868726001228C4 /* Reducer.swift */; };
+		7880718B1F87DA11001228C4 /* Wods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7880718A1F87DA11001228C4 /* Wods.storyboard */; };
+		7880718E1F87FB2E001228C4 /* ClassNameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */; };
+		788071911F8916B7001228C4 /* AppState+TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071901F8916B7001228C4 /* AppState+TestExtensions.swift */; };
+		788071931F8917E1001228C4 /* WodsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071921F8917E1001228C4 /* WodsPresenter.swift */; };
 		78E52CB51F746A93003BD244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB41F746A93003BD244 /* AppDelegate.swift */; };
-		78E52CB71F746A93003BD244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB61F746A93003BD244 /* ViewController.swift */; };
+		78E52CB71F746A93003BD244 /* WodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB61F746A93003BD244 /* WodsViewController.swift */; };
 		78E52CBA1F746A93003BD244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E52CB81F746A93003BD244 /* Main.storyboard */; };
 		78E52CBC1F746A93003BD244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E52CBB1F746A93003BD244 /* Assets.xcassets */; };
 		78E52CBF1F746A93003BD244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E52CBD1F746A93003BD244 /* LaunchScreen.storyboard */; };
@@ -28,9 +34,15 @@
 
 /* Begin PBXFileReference section */
 		7856A0201F82E2D7002D7CBC /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		788071831F868213001228C4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		788071861F868726001228C4 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		7880718A1F87DA11001228C4 /* Wods.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wods.storyboard; sourceTree = "<group>"; };
+		7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameIdentifiable.swift; sourceTree = "<group>"; };
+		788071901F8916B7001228C4 /* AppState+TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+TestExtensions.swift"; sourceTree = "<group>"; };
+		788071921F8917E1001228C4 /* WodsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsPresenter.swift; sourceTree = "<group>"; };
 		78E52CB11F746A93003BD244 /* WODmvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WODmvp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E52CB41F746A93003BD244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78E52CB61F746A93003BD244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78E52CB61F746A93003BD244 /* WodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsViewController.swift; sourceTree = "<group>"; };
 		78E52CB91F746A93003BD244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78E52CBB1F746A93003BD244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78E52CBE1F746A93003BD244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,9 +79,65 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		788071821F8681F7001228C4 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				788071831F868213001228C4 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		788071851F8686FD001228C4 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				788071861F868726001228C4 /* Reducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		788071881F87D8B4001228C4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				78E52CBD1F746A93003BD244 /* LaunchScreen.storyboard */,
+				78E52CB81F746A93003BD244 /* Main.storyboard */,
+				788071891F87D8C2001228C4 /* Wods */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		788071891F87D8C2001228C4 /* Wods */ = {
+			isa = PBXGroup;
+			children = (
+				78E52CB61F746A93003BD244 /* WodsViewController.swift */,
+				7880718A1F87DA11001228C4 /* Wods.storyboard */,
+				788071921F8917E1001228C4 /* WodsPresenter.swift */,
+			);
+			path = Wods;
+			sourceTree = "<group>";
+		};
+		7880718C1F87FB1A001228C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7880718F1F89169D001228C4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				788071901F8916B7001228C4 /* AppState+TestExtensions.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		78E52CA81F746A93003BD244 = {
 			isa = PBXGroup;
 			children = (
+				7880718F1F89169D001228C4 /* Test */,
+				7880718C1F87FB1A001228C4 /* Extensions */,
+				788071851F8686FD001228C4 /* Reducers */,
+				788071821F8681F7001228C4 /* State */,
 				78E52CB31F746A93003BD244 /* WODmvp */,
 				78E52CC81F746A93003BD244 /* WODmvpTests */,
 				78E52CB21F746A93003BD244 /* Products */,
@@ -89,11 +157,9 @@
 		78E52CB31F746A93003BD244 /* WODmvp */ = {
 			isa = PBXGroup;
 			children = (
+				788071881F87D8B4001228C4 /* Scenes */,
 				78E52CB41F746A93003BD244 /* AppDelegate.swift */,
-				78E52CB61F746A93003BD244 /* ViewController.swift */,
-				78E52CB81F746A93003BD244 /* Main.storyboard */,
 				78E52CBB1F746A93003BD244 /* Assets.xcassets */,
-				78E52CBD1F746A93003BD244 /* LaunchScreen.storyboard */,
 				78E52CC01F746A93003BD244 /* Info.plist */,
 			);
 			path = WODmvp;
@@ -195,6 +261,7 @@
 				78E52CBF1F746A93003BD244 /* LaunchScreen.storyboard in Resources */,
 				78E52CBC1F746A93003BD244 /* Assets.xcassets in Resources */,
 				78E52CBA1F746A93003BD244 /* Main.storyboard in Resources */,
+				7880718B1F87DA11001228C4 /* Wods.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E52CB71F746A93003BD244 /* ViewController.swift in Sources */,
+				788071841F868213001228C4 /* AppState.swift in Sources */,
+				788071931F8917E1001228C4 /* WodsPresenter.swift in Sources */,
+				788071911F8916B7001228C4 /* AppState+TestExtensions.swift in Sources */,
+				78E52CB71F746A93003BD244 /* WodsViewController.swift in Sources */,
+				788071871F868726001228C4 /* Reducer.swift in Sources */,
+				7880718E1F87FB2E001228C4 /* ClassNameIdentifiable.swift in Sources */,
 				78E52CB51F746A93003BD244 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
