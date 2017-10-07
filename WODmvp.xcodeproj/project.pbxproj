@@ -134,6 +134,7 @@
 		78E52CA81F746A93003BD244 = {
 			isa = PBXGroup;
 			children = (
+				788071881F87D8B4001228C4 /* Scenes */,
 				7880718F1F89169D001228C4 /* Test */,
 				7880718C1F87FB1A001228C4 /* Extensions */,
 				788071851F8686FD001228C4 /* Reducers */,
@@ -157,7 +158,6 @@
 		78E52CB31F746A93003BD244 /* WODmvp */ = {
 			isa = PBXGroup;
 			children = (
-				788071881F87D8B4001228C4 /* Scenes */,
 				78E52CB41F746A93003BD244 /* AppDelegate.swift */,
 				78E52CBB1F746A93003BD244 /* Assets.xcassets */,
 				78E52CC01F746A93003BD244 /* Info.plist */,
