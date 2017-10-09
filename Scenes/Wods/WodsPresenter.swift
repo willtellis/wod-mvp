@@ -7,7 +7,27 @@
 //
 
 import Foundation
-import ReSwift
+
+enum LoadingViewModel<T> {
+    case loading
+    case success(T)
+    case failure(String)
+}
+
+extension LoadingViewModel where T == [WodCellViewModel] {
+    init(_ wods: Request<[WodState]>) {
+        switch wods {
+        case .notStarted, .loading:
+            self = .loading
+        case .success(let wods):
+            self = .success(wods.map {
+                WodCellViewModel(title: $0.name, content: $0.content)
+            })
+        case .failure(let error):
+            self = .failure(error.localizedDescription)
+        }
+    }
+}
 
 struct WodCellViewModel {
     var title: String = ""
@@ -16,26 +36,20 @@ struct WodCellViewModel {
 
 struct WodsViewModel {
     let title: String
-    let wodCellViewModels: [WodCellViewModel]
+    let wodCellViewModels: LoadingViewModel<[WodCellViewModel]>
 
     init(
         title: String = "",
-        wodCellViewModels: [WodCellViewModel] = []
+        wodCellViewModels: LoadingViewModel<[WodCellViewModel]> = .loading
     ) {
         self.title = title
         self.wodCellViewModels = wodCellViewModels
     }
 
-    init(_ state: AppState) {
-        guard case .initialized(let browsingState) = state.initialization else {
-            self.init()
-            return
-        }
+    init(_ model: WodsModel) {
         self.init(
             title: NSLocalizedString("Wods", comment: ""),
-            wodCellViewModels: browsingState.wods.map {
-                WodCellViewModel(title: $0.name, content: $0.content)
-            }
+            wodCellViewModels: LoadingViewModel(model.wods)
         )
     }
 }
@@ -44,28 +58,23 @@ protocol WodsView: AnyObject {
     func render(_ viewModel: WodsViewModel)
 }
 
-class WodsPresenter: StoreSubscriber {
-    let store: AppStore
-    
+class WodsPresenter: WodsModelSubscriber {
+    private let modelProvider = WodsModelProvider()
     weak var view: WodsView? {
         didSet {
-            store.unsubscribe(self)
-            store.subscribe(self)
+            modelProvider.subscriber = (view != nil) ? self : nil
         }
-    }
-
-    init(_ store: AppStore = AppStore.main) {
-        self.store = store
     }
 
     func presentWodDetails(for wodIndex: Int) {
         // TODO: WTE
     }
 
-    // Mark: StoreSubscriber
-    typealias StoreSubscriberStateType = AppState
-
-    func newState(state: AppState) {
-        view?.render(WodsViewModel(state))
+    // MARK: WodsModelSubscriber
+    func update(_ model: WodsModel) {
+        view?.render(WodsViewModel(model))
+        if case .notStarted = model.wods {
+            modelProvider.loadModel()
+        }
     }
 }

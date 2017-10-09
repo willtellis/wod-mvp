@@ -8,6 +8,13 @@
 
 import ReSwift
 
+enum Request<T> {
+    case notStarted
+    case loading
+    case success(T)
+    case failure(Error)
+}
+
 struct AppState: StateType {
     var initialization: Initialization = .uninitialized
 }
@@ -18,7 +25,7 @@ enum Initialization {
 }
 
 struct BrowsingState {
-    var wods: [WodState] = []
+    var wods: Request<[WodState]> = .notStarted
 }
 
 struct WodState {

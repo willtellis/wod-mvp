@@ -11,7 +11,7 @@ import ReSwift
 
 // The global application store, which is responsible for managing the appliction state.
 extension Store where State == AppState {
-    static let main = Store<AppState>(reducer: reducer, state: AppState.test)
+    static let main = Store<AppState>(reducer: reducer, state: nil)
 }
 typealias AppStore = Store<AppState>
 
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        AppStore.main.dispatch(InitializationAction.initialize)
         return true
     }
 }

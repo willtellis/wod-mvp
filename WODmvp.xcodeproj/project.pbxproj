@@ -14,6 +14,8 @@
 		7880718E1F87FB2E001228C4 /* ClassNameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */; };
 		788071911F8916B7001228C4 /* AppState+TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071901F8916B7001228C4 /* AppState+TestExtensions.swift */; };
 		788071931F8917E1001228C4 /* WodsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071921F8917E1001228C4 /* WodsPresenter.swift */; };
+		788071961F898B0D001228C4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071951F898B0D001228C4 /* DataService.swift */; };
+		788071991F8B1311001228C4 /* WodsModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071981F8B1311001228C4 /* WodsModelProvider.swift */; };
 		78E52CB51F746A93003BD244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB41F746A93003BD244 /* AppDelegate.swift */; };
 		78E52CB71F746A93003BD244 /* WodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB61F746A93003BD244 /* WodsViewController.swift */; };
 		78E52CBA1F746A93003BD244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E52CB81F746A93003BD244 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameIdentifiable.swift; sourceTree = "<group>"; };
 		788071901F8916B7001228C4 /* AppState+TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+TestExtensions.swift"; sourceTree = "<group>"; };
 		788071921F8917E1001228C4 /* WodsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsPresenter.swift; sourceTree = "<group>"; };
+		788071951F898B0D001228C4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		788071981F8B1311001228C4 /* WodsModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsModelProvider.swift; sourceTree = "<group>"; };
 		78E52CB11F746A93003BD244 /* WODmvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WODmvp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E52CB41F746A93003BD244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78E52CB61F746A93003BD244 /* WodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				78E52CB61F746A93003BD244 /* WodsViewController.swift */,
 				7880718A1F87DA11001228C4 /* Wods.storyboard */,
 				788071921F8917E1001228C4 /* WodsPresenter.swift */,
+				788071981F8B1311001228C4 /* WodsModelProvider.swift */,
 			);
 			path = Wods;
 			sourceTree = "<group>";
@@ -131,9 +136,26 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		788071941F898A3C001228C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				788071971F898B1E001228C4 /* Data */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		788071971F898B1E001228C4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				788071951F898B0D001228C4 /* DataService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		78E52CA81F746A93003BD244 = {
 			isa = PBXGroup;
 			children = (
+				788071941F898A3C001228C4 /* Services */,
 				788071881F87D8B4001228C4 /* Scenes */,
 				7880718F1F89169D001228C4 /* Test */,
 				7880718C1F87FB1A001228C4 /* Extensions */,
@@ -301,9 +323,11 @@
 				788071931F8917E1001228C4 /* WodsPresenter.swift in Sources */,
 				788071911F8916B7001228C4 /* AppState+TestExtensions.swift in Sources */,
 				78E52CB71F746A93003BD244 /* WodsViewController.swift in Sources */,
+				788071991F8B1311001228C4 /* WodsModelProvider.swift in Sources */,
 				788071871F868726001228C4 /* Reducer.swift in Sources */,
 				7880718E1F87FB2E001228C4 /* ClassNameIdentifiable.swift in Sources */,
 				78E52CB51F746A93003BD244 /* AppDelegate.swift in Sources */,
+				788071961F898B0D001228C4 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
