@@ -11,7 +11,7 @@ import Foundation
 extension AppState {
     static let test: AppState = {
         let browsingState = BrowsingState(
-            wods: [WodState(name: "Endurence Warmup", content: "3 rounds of 1:00 each samson stretch, air squat, ring row, push up, good morning, sit up")]
+            wods: .success([WodState(name: "Endurence Warmup", content: "3 rounds of 1:00 each samson stretch, air squat, ring row, push up, good morning, sit up")])
         )
         return AppState(
             initialization: .initialized(browsingState)

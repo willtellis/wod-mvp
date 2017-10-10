@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WodsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="WodsTableViewCell" rowHeight="111" id="5eP-0U-6NY" customClass="WodsTableViewCell" customModule="WODCordux" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WodsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="WodsTableViewCell" rowHeight="111" id="5eP-0U-6NY" customClass="WodsTableViewCell" customModule="WODmvp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5eP-0U-6NY" id="xd1-dy-QQn">
@@ -62,10 +63,50 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="errorBackgroundView" destination="bxc-5T-G0c" id="7e9-QS-HIh"/>
+                        <outlet property="errorLabel" destination="lPy-o7-byV" id="HVq-fv-vZt"/>
+                        <outlet property="loadingBackgroundView" destination="FtD-3s-1pR" id="lUj-L5-VCx"/>
                         <outlet property="tableView" destination="JBe-8C-TbF" id="5LX-bt-46y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns3-NB-PJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="bxc-5T-G0c">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-o7-byV">
+                            <rect key="frame" x="99" y="54" width="42" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lPy-o7-byV" firstAttribute="centerX" secondItem="bxc-5T-G0c" secondAttribute="centerX" id="SfR-tG-Uzi"/>
+                        <constraint firstItem="lPy-o7-byV" firstAttribute="centerY" secondItem="bxc-5T-G0c" secondAttribute="centerY" id="TxF-wE-Ey7"/>
+                        <constraint firstItem="gjZ-YX-3Kz" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lPy-o7-byV" secondAttribute="bottom" constant="8" id="caC-3j-6SR"/>
+                        <constraint firstItem="lPy-o7-byV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gjZ-YX-3Kz" secondAttribute="top" constant="8" id="edB-Wi-IJ6"/>
+                        <constraint firstItem="gjZ-YX-3Kz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lPy-o7-byV" secondAttribute="trailing" constant="8" id="qtT-Ev-EpS"/>
+                        <constraint firstItem="lPy-o7-byV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gjZ-YX-3Kz" secondAttribute="leading" constant="8" id="sYN-Wl-bBc"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="gjZ-YX-3Kz"/>
+                </view>
+                <view contentMode="scaleToFill" id="FtD-3s-1pR">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-ls-QIg">
+                            <rect key="frame" x="110" y="54" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TS7-ls-QIg" firstAttribute="centerX" secondItem="FtD-3s-1pR" secondAttribute="centerX" id="51e-Vw-RYx"/>
+                        <constraint firstItem="TS7-ls-QIg" firstAttribute="centerY" secondItem="FtD-3s-1pR" secondAttribute="centerY" id="bMa-or-vFy"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Qc0-2J-3rM"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="160.56971514242881"/>
         </scene>
