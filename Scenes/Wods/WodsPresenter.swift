@@ -59,11 +59,15 @@ protocol WodsView: AnyObject {
 }
 
 class WodsPresenter: WodsModelSubscriber {
-    private let modelProvider = WodsModelProvider()
+    private let modelProvider: WodsModelProviderType
     weak var view: WodsView? {
         didSet {
             modelProvider.subscriber = (view != nil) ? self : nil
         }
+    }
+
+    init(_ modelProvider: WodsModelProviderType = WodsModelProvider()) {
+        self.modelProvider = modelProvider
     }
 
     func presentWodDetails(for wodIndex: Int) {

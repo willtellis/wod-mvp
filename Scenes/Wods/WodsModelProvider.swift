@@ -42,7 +42,12 @@ protocol WodsModelSubscriber: AnyObject {
     func update(_ model: WodsModel)
 }
 
-class WodsModelProvider: StoreSubscriber {
+protocol WodsModelProviderType: AnyObject {
+    weak var subscriber: WodsModelSubscriber? { get set }
+    func loadModel()
+}
+
+class WodsModelProvider: WodsModelProviderType, StoreSubscriber {
     private let store: AppStore
     private let dataService: DataServiceType
 

@@ -12,10 +12,10 @@
 		788071871F868726001228C4 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071861F868726001228C4 /* Reducer.swift */; };
 		7880718B1F87DA11001228C4 /* Wods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7880718A1F87DA11001228C4 /* Wods.storyboard */; };
 		7880718E1F87FB2E001228C4 /* ClassNameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */; };
-		788071911F8916B7001228C4 /* AppState+TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071901F8916B7001228C4 /* AppState+TestExtensions.swift */; };
 		788071931F8917E1001228C4 /* WodsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071921F8917E1001228C4 /* WodsPresenter.swift */; };
 		788071961F898B0D001228C4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071951F898B0D001228C4 /* DataService.swift */; };
 		788071991F8B1311001228C4 /* WodsModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788071981F8B1311001228C4 /* WodsModelProvider.swift */; };
+		7880719D1F8D640F001228C4 /* WodsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880719C1F8D640F001228C4 /* WodsPresenterTests.swift */; };
 		78E52CB51F746A93003BD244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB41F746A93003BD244 /* AppDelegate.swift */; };
 		78E52CB71F746A93003BD244 /* WodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E52CB61F746A93003BD244 /* WodsViewController.swift */; };
 		78E52CBA1F746A93003BD244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E52CB81F746A93003BD244 /* Main.storyboard */; };
@@ -40,10 +40,10 @@
 		788071861F868726001228C4 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		7880718A1F87DA11001228C4 /* Wods.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wods.storyboard; sourceTree = "<group>"; };
 		7880718D1F87FB2E001228C4 /* ClassNameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameIdentifiable.swift; sourceTree = "<group>"; };
-		788071901F8916B7001228C4 /* AppState+TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+TestExtensions.swift"; sourceTree = "<group>"; };
 		788071921F8917E1001228C4 /* WodsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsPresenter.swift; sourceTree = "<group>"; };
 		788071951F898B0D001228C4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		788071981F8B1311001228C4 /* WodsModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsModelProvider.swift; sourceTree = "<group>"; };
+		7880719C1F8D640F001228C4 /* WodsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsPresenterTests.swift; sourceTree = "<group>"; };
 		78E52CB11F746A93003BD244 /* WODmvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WODmvp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E52CB41F746A93003BD244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78E52CB61F746A93003BD244 /* WodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodsViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 		7880718F1F89169D001228C4 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				788071901F8916B7001228C4 /* AppState+TestExtensions.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -150,6 +149,22 @@
 				788071951F898B0D001228C4 /* DataService.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		7880719A1F8D6362001228C4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7880719B1F8D638A001228C4 /* Wods */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7880719B1F8D638A001228C4 /* Wods */ = {
+			isa = PBXGroup;
+			children = (
+				7880719C1F8D640F001228C4 /* WodsPresenterTests.swift */,
+			);
+			path = Wods;
 			sourceTree = "<group>";
 		};
 		78E52CA81F746A93003BD244 = {
@@ -190,6 +205,7 @@
 		78E52CC81F746A93003BD244 /* WODmvpTests */ = {
 			isa = PBXGroup;
 			children = (
+				7880719A1F8D6362001228C4 /* Scenes */,
 				78E52CC91F746A93003BD244 /* WODmvpTests.swift */,
 				78E52CCB1F746A93003BD244 /* Info.plist */,
 			);
@@ -321,7 +337,6 @@
 			files = (
 				788071841F868213001228C4 /* AppState.swift in Sources */,
 				788071931F8917E1001228C4 /* WodsPresenter.swift in Sources */,
-				788071911F8916B7001228C4 /* AppState+TestExtensions.swift in Sources */,
 				78E52CB71F746A93003BD244 /* WodsViewController.swift in Sources */,
 				788071991F8B1311001228C4 /* WodsModelProvider.swift in Sources */,
 				788071871F868726001228C4 /* Reducer.swift in Sources */,
@@ -336,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E52CCA1F746A93003BD244 /* WODmvpTests.swift in Sources */,
+				7880719D1F8D640F001228C4 /* WodsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
