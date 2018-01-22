@@ -128,13 +128,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7880718F1F89169D001228C4 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		788071941F898A3C001228C4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +165,6 @@
 			children = (
 				788071941F898A3C001228C4 /* Services */,
 				788071881F87D8B4001228C4 /* Scenes */,
-				7880718F1F89169D001228C4 /* Test */,
 				7880718C1F87FB1A001228C4 /* Extensions */,
 				788071851F8686FD001228C4 /* Reducers */,
 				788071821F8681F7001228C4 /* State */,
